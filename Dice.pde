@@ -5,9 +5,15 @@ void setup()
 }
 void draw()
 {
-	//your code here
-	Die x1 = new Die(50,50);
-    x1.show();
+//your code here
+for (int x = 20; x < 500; x+=60)
+  {
+	for(int y = 20; y < 500; y+=60)
+   {
+      Die x1 = new Die(x, y);
+  	  x1.show();
+  	}
+  }
 }
 void mousePressed()
 {
@@ -16,7 +22,8 @@ void mousePressed()
 class Die //models one single dice cube
 {
 	//variable declarations here
-	int myX, myY;
+	int myX, myY,myDots,totalDots;
+	int total;
 	Die(int x, int y) //constructor
 	{
 		//variable initializations here
@@ -27,10 +34,52 @@ class Die //models one single dice cube
 	void roll()
 	{
 		//your code here
+		myDots = (int)((Math.random()*6)+1);
 	}
-	void show()
+    void show()
 	{
-		//your code here
-		rect(myX,myY,50,50);
-	}
+	//your code here
+    fill(255,255,255);
+    rect(myX, myY, 50, 50);
+    fill(0);
+    if (myDots == 1)
+    {
+      	ellipse(myX+25,myY+25,10,10);
+    }
+    else if(myDots == 2)
+    {
+     	ellipse(myX+35,myY+35,10,10);
+     	ellipse(myX+15,myY+15,10,10);
+    }
+    else if(myDots == 3)
+    {
+      	ellipse(myX+37,myY+37,10,10);
+      	ellipse(myX+25,myY+25,10,10);
+      	ellipse(myX+13,myY+13,10,10);
+    }
+    else if(myDots == 4)
+   	{
+    	ellipse(myX+15,myY+15,10,10);
+      	ellipse(myX+35,myY+15,10,10);
+        ellipse(myX+15,myY+35,10,10);
+        ellipse(myX+35,myY+35,10,10);
+    }
+    else if(myDots == 5)
+    {
+      ellipse(myX+13,myY+13,10,10);
+      ellipse(myX+37,myY+13,10,10);
+      ellipse(myX+25,myY+25,10,10);
+      ellipse(myX+13,myY+37,10,10);
+      ellipse(myX+37,myY+37,10,10);
+    }
+    else
+    {
+      ellipse(myX+15,myY+11,10,10);
+      ellipse(myX+35,myY+11,10,10);
+      ellipse(myX+15,myY+25,10,10);
+      ellipse(myX+35,myY+25,10,10);
+      ellipse(myX+15,myY+40,10,10);
+      ellipse(myX+35,myY+40,10,10);
+    }	
+    }
 }
