@@ -28,13 +28,14 @@ class Die //models one single dice cube
 	{
 		//variable initializations here
 		myX = x;
-        myY = y;
-        roll();
+    myY = y;
+    roll();
 	}
 	void roll()
 	{
 		//your code here
 		myDots = (int)((Math.random()*6)+1);
+    totalDots = myDots + totalDots;
 	}
     void show()
 	{
@@ -42,6 +43,8 @@ class Die //models one single dice cube
     fill(255,255,255);
     rect(myX, myY, 50, 50);
     fill(0);
+    textSize(15);
+    text("Total: "+totalDots,220,550);
     if (myDots == 1)
     {
       	ellipse(myX+25,myY+25,10,10);
