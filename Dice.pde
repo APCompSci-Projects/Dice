@@ -1,19 +1,25 @@
 void setup()
 {
-	size(500,500);
+	size(500,600);
 	noLoop();
 }
 void draw()
 {
 //your code here
+background(192);
+int totalDots = 0;
 for (int x = 20; x < 500; x+=60)
   {
 	for(int y = 20; y < 500; y+=60)
    {
       Die x1 = new Die(x, y);
-  	  x1.show();
-  	}
+  	  x1.roll();
+      totalDots = totalDots + x1.myDots;
+      x1.show();  	
+   }
   }
+  textSize(15);
+  text("Total: "+ totalDots, 220, 550);
 }
 void mousePressed()
 {
@@ -23,7 +29,6 @@ class Die //models one single dice cube
 {
 	//variable declarations here
 	int myX, myY,myDots,totalDots;
-	int total;
 	Die(int x, int y) //constructor
 	{
 		//variable initializations here
@@ -43,8 +48,6 @@ class Die //models one single dice cube
     fill(255,255,255);
     rect(myX, myY, 50, 50);
     fill(0);
-    textSize(15);
-    text("Total: "+totalDots,220,550);
     if (myDots == 1)
     {
       	ellipse(myX+25,myY+25,10,10);
