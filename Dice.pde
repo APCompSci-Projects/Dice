@@ -19,6 +19,7 @@ for (int x = 20; x < 500; x+=60)
    }
   }
   textSize(15);
+  fill(0);
   text("Total: "+ totalDots, 220, 550);
 }
 void mousePressed()
@@ -47,7 +48,7 @@ class Die //models one single dice cube
 	//your code here
     fill(255,255,255);
     rect(myX, myY, 50, 50);
-    fill(0);
+    fill((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
     if (myDots == 1)
     {
       	ellipse(myX+25,myY+25,10,10);
