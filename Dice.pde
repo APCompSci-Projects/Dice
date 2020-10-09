@@ -47,8 +47,35 @@ class Die //models one single dice cube
 	{
 	//your code here
     fill(255,255,255);
+    switch(true){
+      //Diagonal going from top left to bottom right
+      case myX == 20 && myY == 20:
+      case myX == 80 && myY == 80:
+      case myX == 140 && myY == 140:
+      case myX == 200 && myY == 200:
+      case myX == 260 && myY == 260:
+      case myX == 320 && myY == 320:
+      case myX == 380 && myY == 380:
+      case myX == 440 && myY == 440:
+        fill((int)(Math.random()*200)+3, (int)(Math.random()*200)+3, (int)(Math.random()*200))+3;
+        break;
+      //Diagonal going from top right to bottom left
+      case myX == 440 && myY == 20:
+      case myX == 380 && myY == 80:
+      case myX == 320 && myY == 140:
+      case myX == 260 && myY == 200:
+      case myX == 200 && myY == 260:
+      case myX == 140 && myY == 320:
+      case myX == 80 && myY == 380:
+      case myX == 20 && myY == 440:
+        fill((int)(Math.random()*200)+3, (int)(Math.random()*200)+3, (int)(Math.random()*200))+3;
+        break;
+      default :
+          fill(255,255,255);
+        break;    
+    }
     rect(myX, myY, 50, 50);
-    fill((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
+    fill((int)(Math.random()*255)+3, (int)(Math.random()*255)+3, (int)(Math.random()*255))+3;
     if (myDots == 1)
     {
       	ellipse(myX+25,myY+25,10,10);
@@ -67,9 +94,9 @@ class Die //models one single dice cube
     else if(myDots == 4)
    	{
     	ellipse(myX+15,myY+15,10,10);
-      	ellipse(myX+35,myY+15,10,10);
-        ellipse(myX+15,myY+35,10,10);
-        ellipse(myX+35,myY+35,10,10);
+      ellipse(myX+35,myY+15,10,10);
+      ellipse(myX+15,myY+35,10,10);
+      ellipse(myX+35,myY+35,10,10);
     }
     else if(myDots == 5)
     {
