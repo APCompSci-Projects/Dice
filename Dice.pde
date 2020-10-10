@@ -47,32 +47,43 @@ class Die //models one single dice cube
 	{
 	//your code here
     fill(255,255,255);
-    switch(true){
-      //Diagonal going from top left to bottom right
-      case myX == 20 && myY == 20:
-      case myX == 80 && myY == 80:
-      case myX == 140 && myY == 140:
-      case myX == 200 && myY == 200:
-      case myX == 260 && myY == 260:
-      case myX == 320 && myY == 320:
-      case myX == 380 && myY == 380:
-      case myX == 440 && myY == 440:
-        fill((int)(Math.random()*200)+3, (int)(Math.random()*200)+3, (int)(Math.random()*200))+3;
-        break;
-      //Diagonal going from top right to bottom left
-      case myX == 440 && myY == 20:
-      case myX == 380 && myY == 80:
-      case myX == 320 && myY == 140:
-      case myX == 260 && myY == 200:
-      case myX == 200 && myY == 260:
-      case myX == 140 && myY == 320:
-      case myX == 80 && myY == 380:
-      case myX == 20 && myY == 440:
-        fill((int)(Math.random()*200)+3, (int)(Math.random()*200)+3, (int)(Math.random()*200))+3;
-        break;
-      default :
-          fill(255,255,255);
-        break;    
+            //Diagonal going from top left to bottom right
+    if (myX == 20 && myY == 20) {
+      fill((int)(Math.random()*200)+3, (int)(Math.random()*200)+3, (int)(Math.random()*200)+3);
+    } else if (myX == 80 && myY == 80) {
+      fill((int)(Math.random()*200)+3, (int)(Math.random()*200)+3, (int)(Math.random()*200)+3);
+    } else if (myX == 140 && myY == 140) {
+      fill((int)(Math.random()*200)+3, (int)(Math.random()*200)+3, (int)(Math.random()*200)+3);
+    } else if (myX == 200 && myY == 200) {
+      fill((int)(Math.random()*200)+3, (int)(Math.random()*200)+3, (int)(Math.random()*200)+3);
+    } else if (myX == 260 && myY == 260) {
+      fill((int)(Math.random()*200)+3, (int)(Math.random()*200)+3, (int)(Math.random()*200)+3);
+    } else if (myX == 320 && myY == 320) {
+      fill((int)(Math.random()*200)+3, (int)(Math.random()*200)+3, (int)(Math.random()*200)+3);
+    } else if (myX == 380 && myY == 380) {
+      fill((int)(Math.random()*200)+3, (int)(Math.random()*200)+3, (int)(Math.random()*200)+3);
+    } else if (myX == 440 && myY == 440) {
+      fill((int)(Math.random()*200)+3, (int)(Math.random()*200)+3, (int)(Math.random()*200)+3);
+    }
+    //Diagonal going from top right to bottom left
+    else if (myX == 440 && myY == 20) {
+      fill((int)(Math.random()*200)+3, (int)(Math.random()*200)+3, (int)(Math.random()*200)+3);
+    } else if (myX == 380 && myY == 80) {
+      fill((int)(Math.random()*200)+3, (int)(Math.random()*200)+3, (int)(Math.random()*200)+3);
+    } else if (myX == 320 && myY == 140) {
+      fill((int)(Math.random()*200)+3, (int)(Math.random()*200)+3, (int)(Math.random()*200)+3);
+    } else if (myX == 260 && myY == 200) {
+      fill((int)(Math.random()*200)+3, (int)(Math.random()*200)+3, (int)(Math.random()*200)+3);
+    } else if (myX == 200 && myY == 260) {
+      fill((int)(Math.random()*200)+3, (int)(Math.random()*200)+3, (int)(Math.random()*200)+3);
+    } else if (myX == 140 && myY == 320) {
+      fill((int)(Math.random()*200)+3, (int)(Math.random()*200)+3, (int)(Math.random()*200)+3);
+    } else if (myX == 80 && myY == 380) {
+      fill((int)(Math.random()*200)+3, (int)(Math.random()*200)+3, (int)(Math.random()*200)+3);
+    } else if (myX == 20 && myY == 440) {
+      fill((int)(Math.random()*200)+3, (int)(Math.random()*200)+3, (int)(Math.random()*200)+3);
+    } else {
+      fill(255, 255, 255);
     }
     rect(myX, myY, 50, 50);
     fill((int)(Math.random()*255)+3, (int)(Math.random()*255)+3, (int)(Math.random()*255))+3;
